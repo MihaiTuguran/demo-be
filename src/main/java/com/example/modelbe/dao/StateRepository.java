@@ -1,4 +1,11 @@
 package com.example.modelbe.dao;
 
-public interface StateRepository {
+import com.example.modelbe.entity.State;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.rest.core.annotation.RepositoryRestResource;
+import org.springframework.data.rest.webmvc.RepositoryRestController;
+
+@RepositoryRestResource(collectionResourceRel = "states", path = "states")
+public interface StateRepository extends JpaRepository<State, Long> {
+
 }
